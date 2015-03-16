@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/*! rubix - v2.0.0 - 2015-01-21 [copyright: SketchPixy LLP, email: support@sketchpixy.com] */
+/*! rubix - v2.3.0 - 2015-03-16 [copyright: SketchPixy LLP, email: support@sketchpixy.com] */
 
 /* REQUIRED: DO NOT REMOVE */
 
@@ -10813,16 +10813,6 @@ pre[class*="language-"] .token.debug {
   }
 }
 
-@-ms-keyframes vex-fadein {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes vex-fadeout {
   0% {
     opacity: 1;
@@ -10834,16 +10824,6 @@ pre[class*="language-"] .token.debug {
 }
 
 @-webkit-keyframes vex-fadeout {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@-ms-keyframes vex-fadeout {
   0% {
     opacity: 1;
   }
@@ -10872,24 +10852,6 @@ pre[class*="language-"] .token.debug {
 }
 
 @-webkit-keyframes vex-rotation {
-  0% {
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(359deg);
-    -webkit-transform: rotate(359deg);
-    -moz-transform: rotate(359deg);
-    -ms-transform: rotate(359deg);
-    -o-transform: rotate(359deg);
-  }
-}
-
-@-ms-keyframes vex-rotation {
   0% {
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
@@ -11240,10 +11202,8 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   width: 100%;
   height: 100%;
   -webkit-animation-iteration-count: infinite;
-  -ms-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-  -ms-animation-timing-function: linear;
   animation-timing-function: linear;
 }
 
@@ -11256,7 +11216,6 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   -webkit-animation-name: ui-spinner-rotate-left;
-  -ms-animation-name: ui-spinner-rotate-left;
   animation-name: ui-spinner-rotate-left;
   -webkit-transform-origin: 0 50%;
   -ms-transform-origin: 0 50%;
@@ -11272,7 +11231,6 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   -webkit-animation-name: ui-spinner-rotate-right;
-  -ms-animation-name: ui-spinner-rotate-right;
   animation-name: ui-spinner-rotate-right;
   -webkit-transform-origin: 100% 50%;
   -ms-transform-origin: 100% 50%;
@@ -16608,7 +16566,7 @@ disabled look for disabled choices in the results dropdown
 
 /* Retina-ize icons */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
   .select2-search input,
   .select2-search-choice-close,
   .select2-container .select2-choice abbr,
@@ -20010,7 +19968,7 @@ be a descendant of the grid when it is being dragged.
   right: 50%;
 }
 
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.4375), (min-resolution: 138dpi), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .dropzone .dz-default.dz-message {
     background-image: url("/imgs/dropzone/spritemap@2x.png");
     background-size: 428px 406px;
@@ -20077,7 +20035,7 @@ be a descendant of the grid when it is being dragged.
   background-repeat: no-repeat;
 }
 
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.4375), (min-resolution: 138dpi), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .dropzone .dz-preview .dz-error-mark,
   .dropzone-previews .dz-preview .dz-error-mark,
   .dropzone .dz-preview .dz-success-mark,
@@ -20121,7 +20079,7 @@ be a descendant of the grid when it is being dragged.
   background-position: 0px -400px;
 }
 
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.4375), (min-resolution: 138dpi), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .dropzone .dz-preview .dz-progress .dz-upload,
   .dropzone-previews .dz-preview .dz-progress .dz-upload {
     background-image: url("/imgs/dropzone/spritemap@2x.png");
@@ -21103,6 +21061,7 @@ th.picker-switch {
 
 .leaflet-container {
   cursor: -webkit-grab;
+  cursor: -moz-grab;
 }
 
 .leaflet-popup-pane,
@@ -21114,6 +21073,7 @@ th.picker-switch {
 .leaflet-dragging .leaflet-clickable {
   cursor: move;
   cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
 }
 
 /* visual tweaks */
@@ -22416,7 +22376,7 @@ body:last-child .blueimp-gallery-playing > .play-pause {
   background-position: 5px -20px;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 4/3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .trumbowyg-button-pane li button {
     background-size: 72%;
     background-image: url('/imgs/trumbowyg/icons-2x-s9034954e6d.png');

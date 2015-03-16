@@ -3,8 +3,10 @@ var Brand = React.createClass({
     return (
       <NavHeader {...this.props}>
         <NavBrand tabIndex='-1'>
+          {/*
           <span style={{position: 'absolute', left: '100px', color: 'white', fontWeight: 'bold'}}>Brandkoop</span>
           <img src='/imgs/logo.png' alt='Brandkoop' width='47' height='47' style={{marginTop: '-7px'}}/>
+          */}
         </NavBrand>
       </NavHeader>
     );

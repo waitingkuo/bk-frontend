@@ -1,4 +1,4 @@
-/*! rubix - v2.0.0 - 2015-01-21 [copyright: SketchPixy LLP, email: support@sketchpixy.com] */
+/*! rubix - v2.3.0 - 2015-03-16 [copyright: SketchPixy LLP, email: support@sketchpixy.com] */
 (function() {
 /*DO NOT MODIFY*/
 
@@ -198,41 +198,41 @@ var l20n=_RL20n_.l20n,
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
+
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-/******/
+
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-/******/
+
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-/******/
+
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
+
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/
+
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
-/******/
+
+
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-/******/
+
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/
+
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-/******/
+
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -290,7 +290,7 @@ var l20n=_RL20n_.l20n,
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(4); return getHotUpdateAPI(React, "preloader.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "preloader.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/shripadkrishna/projects/rubix/rubix-1.2/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(9); return getHotUpdateAPI(React, "preloader.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "preloader.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/willy/brandkoop/brandkoop-frontend/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Ploader = __HUA.createClass({displayName: "Ploader",
 	  getInitialState: function() {
@@ -321,16 +321,24 @@ var l20n=_RL20n_.l20n,
 /***/ function(module, exports, __webpack_require__) {
 
 	/* ERROR PAGES */
-	var notfound = __webpack_require__(5);
+	var notfound = __webpack_require__(4);
 
 	/* APP PAGES */
-	var blank = __webpack_require__(6);
+	var blank = __webpack_require__(5);
+	var values = __webpack_require__(6);
+	var character = __webpack_require__(7);
+	var wordcloud = __webpack_require__(8);
 
 	/* ROUTES */
 	module.exports = (
 	  React.createElement(Route, {handler: ReactRouter.RouteHandler}, 
 	    React.createElement(DefaultRoute, {handler: blank}), 
-	    React.createElement(Route, {path: "/", handler: blank}), 
+	    /*
+	    <Route path='/' handler={blank} />
+	    */
+	    React.createElement(Route, {path: "/character", handler: character}), 
+	    React.createElement(Route, {path: "/values", handler: values}), 
+	    React.createElement(Route, {path: "/wordcloud", handler: wordcloud}), 
 	    React.createElement(NotFoundRoute, {handler: notfound})
 	  )
 	);
@@ -346,35 +354,11 @@ var l20n=_RL20n_.l20n,
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(9); return getHotUpdateAPI(React, "notfound.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "notfound.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/willy/brandkoop/brandkoop-frontend/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
-	var updaters = {},
-	    makeModuleUpdater = __webpack_require__(7);
-
-	function getHotUpdateAPI(React, filename, moduleId) {
-	  var exists = updaters.hasOwnProperty(moduleId);
-	  if (!exists) {
-	    updaters[moduleId] = makeModuleUpdater(React, filename);
-	  }
-
-	  var updater = updaters[moduleId];
-	  return {
-	    createClass: exists ? updater.updateClass : updater.createClass,
-	    updateMountedInstances: updater.updateMountedInstances
-	  };
-	}
-
-	module.exports = getHotUpdateAPI;
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(4); return getHotUpdateAPI(React, "notfound.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "notfound.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/shripadkrishna/projects/rubix/rubix-1.2/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
-
-	var Header = __webpack_require__(8);
-	var Sidebar = __webpack_require__(9);
-	var Footer = __webpack_require__(10);
+	var Header = __webpack_require__(10);
+	var Sidebar = __webpack_require__(11);
+	var Footer = __webpack_require__(12);
 
 	var Body = __HUA.createClass({displayName: "Body",
 	  render: function() {
@@ -429,29 +413,59 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(4); return getHotUpdateAPI(React, "blank.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "blank.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/shripadkrishna/projects/rubix/rubix-1.2/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(9); return getHotUpdateAPI(React, "blank.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "blank.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/willy/brandkoop/brandkoop-frontend/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
-	var Header = __webpack_require__(8);
-	var Sidebar = __webpack_require__(9);
-	var Footer = __webpack_require__(10);
+	var Header = __webpack_require__(10);
+	var Sidebar = __webpack_require__(11);
+	var Footer = __webpack_require__(12);
 
-	var Body = __HUA.createClass({displayName: "Body",
+	/*
+	var Body = __HUA.createClass({
 	  render: function() {
 	    return (
-	      React.createElement(Container, {id: "body"}, 
-	        React.createElement(Grid, null, 
-	          React.createElement(Row, null, 
-	            React.createElement(Col, {sm: 12}, 
-	              React.createElement(PanelContainer, null, 
-	                React.createElement(Panel, null, 
-	                  React.createElement(PanelBody, {className: "text-center"}, 
-	                    React.createElement("p", null, "BLANK PAGE")
-	                  )
-	                )
-	              )
+	      <Container id='body'>
+	        <Grid>
+	          <Row>
+	            <Col sm={12}>
+	              <PanelContainer>
+	                <Panel>
+	                  <PanelBody className='text-center'>
+	                    <p>BLANK PAGE LA</p>
+	                  </PanelBody>
+	                </Panel>
+	              </PanelContainer>
+	            </Col>
+	          </Row>
+	          <Row>
+	            <Col sm={12}>
+	              <ButtonGroup>
+	                <Button bsStyle='blue'>Left</Button>
+	                <Button bsStyle='blue'>Middle</Button>
+	                <Button bsStyle='blue'>Right</Button>
+	              </ButtonGroup>
+	            </Col>
+	          </Row>
+	          <Row>
+	          </Row>
+	        </Grid>
+	      </Container>
+	    );
+	  }
+	});
+	*/
+
+	var ChartContainer = __HUA.createClass({displayName: "ChartContainer",
+	  render: function() {
+	    return (
+	      React.createElement(PanelContainer, {noOverflow: true}, 
+	        React.createElement(Panel, null, 
+	          React.createElement(PanelBody, {style: {padding:25}, className: "text-center"}, 
+	            React.createElement("h4", null, this.props.name, " wowowowowo"), 
+	            React.createElement("div", null, 
+	              React.createElement("canvas", {id: this.props.id, width: this.props.width, height: this.props.height})
 	            )
 	          )
 	        )
@@ -460,6 +474,50 @@ var l20n=_RL20n_.l20n,
 	  }
 	});
 
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  getInitialState: function() {
+	    return {
+	      legend: ''
+	    }
+	  },
+	  componentDidMount: function() {
+	    (function() {
+	      var ctx = $('#radar-chart').get(0).getContext("2d");
+	      var data = {
+	        labels: ['Sincerity', 'Excitement', 'Competence', 'Sophistication', 'Ruggedness'],
+	        datasets: [
+	          {
+	            label: "Woo",
+	            fillColor: "rgba(220, 220, 220, 0.2)",
+	            strokeColor: "rgba(220, 220, 220, 1)",
+	            pointColor: "rgba(220, 220, 220, 1)",
+	            pointStrokeColor: "#fff",
+	            pointHighlightFill: "#fff",
+	            pointHighlightStroke: "rgba(151, 187, 205, 1)",
+	            data: [200, 50, 30, 30, 48]
+	          }
+	        ]
+	      };
+	      new Chart(ctx).Radar(data);
+	    })();
+	  },
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, null, 
+	          React.createElement(Row, null, 
+	            React.createElement(Col, {sm: 12}, 
+	              React.createElement(ChartContainer, {id: "radar-chart", height: "75", width: "250", name: "Radar Chart"})
+	            )
+	          )
+	        )
+	      )
+	    )
+	  }
+	});
+
+	var classSet = React.addons.classSet;
 	var Page = __HUA.createClass({displayName: "Page",
 	  mixins: [SidebarMixin],
 	  render: function() {
@@ -481,70 +539,352 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(9); return getHotUpdateAPI(React, "values.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "values.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/willy/brandkoop/brandkoop-frontend/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(10);
+	var Sidebar = __webpack_require__(11);
+	var Footer = __webpack_require__(12);
+
+	var ChartContainer = __HUA.createClass({displayName: "ChartContainer",
+	  render: function() {
+	    return (
+	      React.createElement(PanelContainer, {noOverflow: true}, 
+	        React.createElement(Panel, null, 
+	          React.createElement(PanelBody, {style: {padding:25}, className: "text-center"}, 
+	            React.createElement("h4", null, this.props.name), 
+	            React.createElement("div", null, 
+	              React.createElement("canvas", {id: this.props.id, width: this.props.width, height: this.props.height})
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  getInitialState: function() {
+	    return {
+	      legend: ''
+	    }
+	  },
+	  componentDidMount: function() {
+	    (function() {
+	      ids = [
+	        "#bar-chart-sincerity",
+	        "#bar-chart-excitement",
+	        "#bar-chart-competence",
+	        "#bar-chart-sophistication",
+	        "#bar-chart-ruggedness"
+	      ]
+	      for (var i in ids) {
+	        var ctx = $(ids[i]).get(0).getContext("2d");
+
+	        var data = {
+	          labels: ['Trait1', 'Trait2', 'Trait3', 'Trait4', 'Trait5'],
+	          datasets: [
+	            {
+	              fillColor: "rgba(220, 220, 220, 0.2)",
+	              strokeColor: "rgba(220, 220, 220, 1)",
+	              highlightFill: "rgba(220,220,220,0.75)",
+	              highlightStroke: "rgba(220,220,220,1)",
+	              data: [60, 50, 30, 30, 28]
+	            }
+	          ]
+	        };
+	        new Chart(ctx).Bar(data);
+	      }
+	    })();
+	  },
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, null, 
+	          React.createElement(Row, null, 
+	            React.createElement(Col, {sm: 12}, 
+	              React.createElement(ChartContainer, {id: "bar-chart-sincerity", height: "75", width: "250", name: "Sincerity"}), 
+	              React.createElement(ChartContainer, {id: "bar-chart-excitement", height: "75", width: "250", name: "Excitement"}), 
+	              React.createElement(ChartContainer, {id: "bar-chart-competence", height: "75", width: "250", name: "Competence"}), 
+	              React.createElement(ChartContainer, {id: "bar-chart-sophistication", height: "75", width: "250", name: "Sophisticatoin"}), 
+	              React.createElement(ChartContainer, {id: "bar-chart-ruggedness", height: "75", width: "250", name: "Ruggedness"})
+	            )
+	          )
+	        )
+	      )
+	    )
+	  }
+	});
+
+	var Page = __HUA.createClass({displayName: "Page",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = React.addons.classSet({
+	      'container-open': this.state.open
+	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, null), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    )
+	  }
+	});
+
+	module.exports = Page;
+
+
+/***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(9); return getHotUpdateAPI(React, "character.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "character.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/willy/brandkoop/brandkoop-frontend/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
-	/**
-	 * Provides `createClass` and `updateClass` which can be used as drop-in
-	 * replacement for `React.createClass` in a module. If multiple components
-	 * are defined in the same module, assumes their `displayName`s are different.
-	 */
-	module.exports = function (React, filename) {
-	  var componentUpdaters = {};
+	var Header = __webpack_require__(10);
+	var Sidebar = __webpack_require__(11);
+	var Footer = __webpack_require__(12);
 
-	  function createClass(spec) {
-	    var displayName = spec.displayName,
-	        componentUpdater;
+	var ChartContainer = __HUA.createClass({displayName: "ChartContainer",
+	  render: function() {
+	    return (
+	      React.createElement(PanelContainer, {noOverflow: true}, 
+	        React.createElement(Panel, null, 
+	          React.createElement(PanelBody, {style: {padding:25}, className: "text-center"}, 
+	            React.createElement("h4", null, this.props.name), 
+	            React.createElement("div", null, 
+	              React.createElement("canvas", {id: this.props.id, width: this.props.width, height: this.props.height})
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
 
-	    if (componentUpdaters[displayName]) {
-	      throw new Error(
-	        'Found duplicate displayName in ' + filename + ': "' + displayName + '".\n' +
-	        'react-hot-loader uses displayName to distinguish between several components in one file.'
-	      );
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  getInitialState: function() {
+	    return {
+	      legend: ''
 	    }
-
-	    componentUpdater = __webpack_require__(11)(React);
-	    componentUpdaters[displayName] = componentUpdater;
-
-	    return componentUpdater.createClass(spec);
+	  },
+	  componentDidMount: function() {
+	    (function() {
+	      var ctx = $('#radar-chart').get(0).getContext("2d");
+	      var data = {
+	        labels: ['Sincerity', 'Excitement', 'Competence', 'Sophistication', 'Ruggedness'],
+	        datasets: [
+	          {
+	            label: "Woo",
+	            fillColor: "rgba(220, 220, 220, 0.2)",
+	            strokeColor: "rgba(220, 220, 220, 1)",
+	            pointColor: "rgba(220, 220, 220, 1)",
+	            pointStrokeColor: "#fff",
+	            pointHighlightFill: "#fff",
+	            pointHighlightStroke: "rgba(151, 187, 205, 1)",
+	            data: [70, 50, 30, 30, 48]
+	          }
+	        ]
+	      };
+	      new Chart(ctx).Radar(data);
+	    })();
+	  },
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, null, 
+	          React.createElement(Row, null, 
+	            React.createElement(Col, {sm: 12}, 
+	              React.createElement(ChartContainer, {id: "radar-chart", height: "75", width: "250", name: "Radar Chart"})
+	            )
+	          )
+	        )
+	      )
+	    )
 	  }
+	});
 
-	  function updateClass(spec) {
-	    var displayName = spec.displayName,
-	        componentUpdater = componentUpdaters[displayName];
-
-	    return componentUpdater ?
-	      componentUpdater.updateClass(spec) :
-	      createClass(spec);
-	  }
-
-	  function updateMountedInstances() {
-	    Object.keys(componentUpdaters).forEach(function (displayName) {
-	      componentUpdaters[displayName].updateMountedInstances();
+	var classSet = React.addons.classSet;
+	var Page = __HUA.createClass({displayName: "Page",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = React.addons.classSet({
+	      'container-open': this.state.open
 	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, null), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    );
 	  }
+	});
 
-	  return {
-	    createClass: createClass,
-	    updateClass: updateClass,
-	    updateMountedInstances: updateMountedInstances
-	  };
-	};
+	module.exports = Page;
+
+
 
 /***/ },
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(4); return getHotUpdateAPI(React, "header.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "header.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/shripadkrishna/projects/rubix/rubix-1.2/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(9); return getHotUpdateAPI(React, "wordcloud.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "wordcloud.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/willy/brandkoop/brandkoop-frontend/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+
+	var Header = __webpack_require__(10);
+	var Sidebar = __webpack_require__(11);
+	var Footer = __webpack_require__(12);
+
+	var ChartContainer = __HUA.createClass({displayName: "ChartContainer",
+	  render: function() {
+	    return (
+	      React.createElement(PanelContainer, {noOverflow: true}, 
+	        React.createElement(Panel, null, 
+	          React.createElement(PanelBody, {style: {padding:25}, className: "text-center"}, 
+	            React.createElement("h4", null, this.props.name), 
+	            React.createElement("div", null, 
+	              /*
+	              <canvas id={this.props.id} width={this.props.width} height={this.props.height} />
+	              */
+	              React.createElement("div", {id: this.props.id, width: this.props.width, height: this.props.height})
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+
+	var Body = __HUA.createClass({displayName: "Body",
+	  getInitialState: function() {
+	    return {
+	      legend: ''
+	    }
+	  },
+	  componentDidMount: function() {
+	    (function() {
+
+	      var fill = d3.scale.category20();
+	      d3.layout.cloud().size([300, 300])
+	          .words([
+	            "Sincerity", "Excitement", "Ruggedness", "Competence", "Sophistication", "more", "words",
+	            "Sincerity", "Excitement", "Ruggedness", "Competence", "Sophistication", "more", "words",
+	            "Sincerity", "Excitement", "Ruggedness", "Competence", "Sophistication", "more", "words",
+	            "than", "this"].map(function(d) {
+	            return {text: d, size: 10 + Math.random() * 90};
+	          }))
+	          .padding(5)
+	          .rotate(function() { return ~~(Math.random() * 2) * 90; })
+	          .font("Impact")
+	          .fontSize(function(d) { return d.size; })
+	          .on("end", draw)
+	          .start();
+	      function draw(words) {
+	console.log($('#word-cloud'));
+	        d3.select("#word-cloud").append("svg")
+	            .attr("width", 300)
+	            .attr("height", 300)
+	          .append("g")
+	            .attr("transform", "translate(150,150)")
+	          .selectAll("text")
+	            .data(words)
+	          .enter().append("text")
+	            .style("font-size", function(d) { return d.size + "px"; })
+	            .style("font-family", "Impact")
+	            .style("fill", function(d, i) { return fill(i); })
+	            .attr("text-anchor", "middle")
+	            .attr("transform", function(d) {
+	              return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+	            })
+	            .text(function(d) { return d.text; });
+	      }
+
+
+	    })();
+	  },
+	  render: function() {
+	    return (
+	      React.createElement(Container, {id: "body"}, 
+	        React.createElement(Grid, null, 
+	          React.createElement(Row, null, 
+	            React.createElement(Col, {sm: 12}, 
+	              React.createElement(ChartContainer, {id: "word-cloud", height: "75", width: "250", name: "Word Cloud"})
+	            )
+	          )
+	        )
+	      )
+	    )
+	  }
+	});
+
+	var classSet = React.addons.classSet;
+	var Page = __HUA.createClass({displayName: "Page",
+	  mixins: [SidebarMixin],
+	  render: function() {
+	    var classes = React.addons.classSet({
+	      'container-open': this.state.open
+	    });
+	    return (
+	      React.createElement(Container, {id: "container", className: classes}, 
+	        React.createElement(Sidebar, null), 
+	        React.createElement(Header, null), 
+	        React.createElement(Body, null), 
+	        React.createElement(Footer, null)
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Page;
+
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var updaters = {},
+	    makeModuleUpdater = __webpack_require__(13);
+
+	function getHotUpdateAPI(React, filename, moduleId) {
+	  var exists = updaters.hasOwnProperty(moduleId);
+	  if (!exists) {
+	    updaters[moduleId] = makeModuleUpdater(React, filename);
+	  }
+
+	  var updater = updaters[moduleId];
+	  return {
+	    createClass: exists ? updater.updateClass : updater.createClass,
+	    updateMountedInstances: updater.updateMountedInstances
+	  };
+	}
+
+	module.exports = getHotUpdateAPI;
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(9); return getHotUpdateAPI(React, "header.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "header.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/willy/brandkoop/brandkoop-frontend/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Brand = __HUA.createClass({displayName: "Brand",
 	  render: function() {
 	    return (
 	      React.createElement(NavHeader, React.__spread({},  this.props), 
-	        React.createElement(NavBrand, {tabIndex: "-1"}, 
-	          React.createElement("img", {src: "/imgs/logo.png", alt: "rubix", width: "111", height: "28"})
+	        React.createElement(NavBrand, {tabIndex: "-1"}
+	          /*
+	          <span style={{position: 'absolute', left: '100px', color: 'white', fontWeight: 'bold'}}>Brandkoop</span>
+	          <img src='/imgs/logo.png' alt='Brandkoop' width='47' height='47' style={{marginTop: '-7px'}}/>
+	          */
 	        )
 	      )
 	    );
@@ -602,10 +942,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 9 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(4); return getHotUpdateAPI(React, "sidebar.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sidebar.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/shripadkrishna/projects/rubix/rubix-1.2/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(9); return getHotUpdateAPI(React, "sidebar.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "sidebar.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/willy/brandkoop/brandkoop-frontend/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var ApplicationSidebar = __HUA.createClass({displayName: "ApplicationSidebar",
 	  render: function() {
@@ -614,17 +954,33 @@ var l20n=_RL20n_.l20n,
 	        React.createElement(Grid, null, 
 	          React.createElement(Row, null, 
 	            React.createElement(Col, {xs: 12}, 
-	              React.createElement("div", {className: "sidebar-header"}, "PAGES"), 
+	              /*
+	              <div className='sidebar-header'>PAGES</div>
+	              */
 	              React.createElement("div", {className: "sidebar-nav-container"}, 
 	                React.createElement(SidebarNav, {style: {marginBottom: 0}}, 
-	                  React.createElement(SidebarNavItem, {glyph: "icon-fontello-gauge", name: "Blank", href: "/"}), 
-	                  React.createElement(SidebarNavItem, {glyph: "icon-feather-mail", name: React.createElement("span", null, "Menu ", React.createElement(BLabel, {className: "bg-darkgreen45 fg-white"}, "3"))}, 
-	                    React.createElement(SidebarNav, null, 
-	                      React.createElement(SidebarNavItem, {glyph: "icon-feather-inbox", name: "Inbox"}), 
-	                      React.createElement(SidebarNavItem, {glyph: "icon-outlined-mail-open", name: "Mail"}), 
-	                      React.createElement(SidebarNavItem, {glyph: "icon-dripicons-message", name: "Compose"})
-	                    )
-	                  )
+	                  /*
+	                  <SidebarNavItem glyph='icon-fontello-gauge' name='Dashboard' href="/" />
+	                  */
+	                  React.createElement(SidebarNavItem, {glyph: "icon-fontello-chart-pie", name: "Character", href: "/character"}), 
+	                  React.createElement(SidebarNavItem, {glyph: "icon-ikons-bar-chart-1", name: "Values", href: "/values"}), 
+	                  React.createElement(SidebarNavItem, {glyph: "icon-stroke-gap-icons-Cloud", name: "Word Cloud", href: "/wordcloud"})
+
+	                  /*
+	                  <SidebarNavItem glyph='icon-outlined-website-2' name="Domain">
+	                    <SidebarNav>
+	                      <SidebarNavItem glyph='icon-feather-inbox' name='brandkoop.com' />
+	                    </SidebarNav>
+	                  </SidebarNavItem>
+	                  <SidebarNavItem glyph='icon-fontello-gauge' name='Blank' href='/' />
+	                  <SidebarNavItem glyph='icon-feather-mail' name={<span>Menu <BLabel className='bg-darkgreen45 fg-white'>3</BLabel></span>}>
+	                    <SidebarNav>
+	                      <SidebarNavItem glyph='icon-feather-inbox' name='Inbox' />
+	                      <SidebarNavItem glyph='icon-outlined-mail-open' name='Mail' />
+	                      <SidebarNavItem glyph='icon-dripicons-message' name='Compose' />
+	                    </SidebarNav>
+	                  </SidebarNavItem>
+	                  */
 	                )
 	              )
 	            )
@@ -657,11 +1013,13 @@ var l20n=_RL20n_.l20n,
 	        React.createElement("div", {id: "avatar"}, 
 	          React.createElement(Grid, null, 
 	            React.createElement(Row, {className: "fg-white"}, 
-	              React.createElement(Col, {xs: 4, collapseRight: true}, 
-	                React.createElement("img", {src: "/imgs/avatars/avatar0.png", width: "40", height: "40"})
+	              React.createElement(Col, {xs: 4, collapseRight: true}
+	                /*
+	                <img src='/imgs/avatars/avatar0.png' width='40' height='40' />
+	                */
 	              ), 
 	              React.createElement(Col, {xs: 8, collapseLeft: true, id: "avatar-col"}, 
-	                React.createElement("div", {style: {top: 23, fontSize: 16, lineHeight: 1, position: 'relative'}}, "Anna Sanchez"), 
+	                React.createElement("div", {style: {top: 23, fontSize: 16, lineHeight: 1, position: 'relative'}}, "User Name"), 
 	                React.createElement("div", null, 
 	                  React.createElement(Progress, {id: "demo-progress", value: 30, min: 0, max: 100, color: "#ffffff"}), 
 	                  React.createElement("a", {href: "#"}, React.createElement(Icon, {id: "demo-icon", bundle: "fontello", glyph: "lock-5"}))
@@ -670,14 +1028,16 @@ var l20n=_RL20n_.l20n,
 	            )
 	          )
 	        ), 
-	        React.createElement(SidebarControls, null, 
-	          React.createElement(SidebarControlBtn, {bundle: "fontello", glyph: "docs", sidebar: 0}), 
-	          React.createElement(SidebarControlBtn, {bundle: "fontello", glyph: "chat-1", sidebar: 1}), 
-	          React.createElement(SidebarControlBtn, {bundle: "fontello", glyph: "chart-pie-2", sidebar: 2}), 
-	          React.createElement(SidebarControlBtn, {bundle: "fontello", glyph: "th-list-2", sidebar: 3}), 
-	          React.createElement(SidebarControlBtn, {bundle: "fontello", glyph: "bell-5", sidebar: 4})
-	        ), 
-	        React.createElement("div", {id: "sidebar-container"}, 
+	        /*
+	        <SidebarControls>
+	          <SidebarControlBtn bundle='fontello' glyph='docs' sidebar={0} />
+	          <SidebarControlBtn bundle='fontello' glyph='chat-1' sidebar={1} />
+	          <SidebarControlBtn bundle='fontello' glyph='chart-pie-2' sidebar={2} />
+	          <SidebarControlBtn bundle='fontello' glyph='th-list-2' sidebar={3} />
+	          <SidebarControlBtn bundle='fontello' glyph='bell-5' sidebar={4} />
+	        </SidebarControls>
+	        */
+	        React.createElement("div", {id: "sidebar-container", style: {top: "100px"}}, 
 	          React.createElement(Sidebar, {sidebar: 0, active: true}, 
 	            React.createElement(ApplicationSidebar, null)
 	          ), 
@@ -703,10 +1063,10 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(4); return getHotUpdateAPI(React, "footer.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "footer.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/shripadkrishna/projects/rubix/rubix-1.2/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
+	var __HUA = (function () { var React = __webpack_require__(3); var getHotUpdateAPI = __webpack_require__(9); return getHotUpdateAPI(React, "footer.jsx", module.id); })(); if (false) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "footer.jsx" + ": " + err.message); } }); module.hot.dispose(function () { var nextTick = require("/Users/willy/brandkoop/brandkoop-frontend/node_modules/react-hot-loader/node_modules/next-tick/index.js"); nextTick(__HUA.updateMountedInstances); }); }
 
 	var Footer = __HUA.createClass({displayName: "Footer",
 	  getInitialState: function() {
@@ -738,7 +1098,60 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ },
-/* 11 */
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	/**
+	 * Provides `createClass` and `updateClass` which can be used as drop-in
+	 * replacement for `React.createClass` in a module. If multiple components
+	 * are defined in the same module, assumes their `displayName`s are different.
+	 */
+	module.exports = function (React, filename) {
+	  var componentUpdaters = {};
+
+	  function createClass(spec) {
+	    var displayName = spec.displayName,
+	        componentUpdater;
+
+	    if (componentUpdaters[displayName]) {
+	      throw new Error(
+	        'Found duplicate displayName in ' + filename + ': "' + displayName + '".\n' +
+	        'react-hot-loader uses displayName to distinguish between several components in one file.'
+	      );
+	    }
+
+	    componentUpdater = __webpack_require__(14)(React);
+	    componentUpdaters[displayName] = componentUpdater;
+
+	    return componentUpdater.createClass(spec);
+	  }
+
+	  function updateClass(spec) {
+	    var displayName = spec.displayName,
+	        componentUpdater = componentUpdaters[displayName];
+
+	    return componentUpdater ?
+	      componentUpdater.updateClass(spec) :
+	      createClass(spec);
+	  }
+
+	  function updateMountedInstances() {
+	    Object.keys(componentUpdaters).forEach(function (displayName) {
+	      componentUpdaters[displayName].updateMountedInstances();
+	    });
+	  }
+
+	  return {
+	    createClass: createClass,
+	    updateClass: updateClass,
+	    updateMountedInstances: updateMountedInstances
+	  };
+	};
+
+/***/ },
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -899,5 +1312,5 @@ var l20n=_RL20n_.l20n,
 
 
 /***/ }
-/******/ ])
+/******/ ]);
 })();

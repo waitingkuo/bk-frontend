@@ -5,9 +5,24 @@ var ApplicationSidebar = React.createClass({
         <Grid>
           <Row>
             <Col xs={12}>
+              {/*
               <div className='sidebar-header'>PAGES</div>
+              */}
               <div className='sidebar-nav-container'>
                 <SidebarNav style={{marginBottom: 0}}>
+                  {/*
+                  <SidebarNavItem glyph='icon-fontello-gauge' name='Dashboard' href="/" />
+                  */}
+                  <SidebarNavItem glyph='icon-fontello-chart-pie' name='Character' href='/character' />
+                  <SidebarNavItem glyph='icon-ikons-bar-chart-1' name='Values' href='/values'/>
+                  <SidebarNavItem glyph='icon-stroke-gap-icons-Cloud' name='Word Cloud' href='/wordcloud' />
+
+                  {/*
+                  <SidebarNavItem glyph='icon-outlined-website-2' name="Domain">
+                    <SidebarNav>
+                      <SidebarNavItem glyph='icon-feather-inbox' name='brandkoop.com' />
+                    </SidebarNav>
+                  </SidebarNavItem>
                   <SidebarNavItem glyph='icon-fontello-gauge' name='Blank' href='/' />
                   <SidebarNavItem glyph='icon-feather-mail' name={<span>Menu <BLabel className='bg-darkgreen45 fg-white'>3</BLabel></span>}>
                     <SidebarNav>
@@ -16,6 +31,7 @@ var ApplicationSidebar = React.createClass({
                       <SidebarNavItem glyph='icon-dripicons-message' name='Compose' />
                     </SidebarNav>
                   </SidebarNavItem>
+                  */}
                 </SidebarNav>
               </div>
             </Col>
@@ -49,10 +65,12 @@ var SidebarSection = React.createClass({
           <Grid>
             <Row className='fg-white'>
               <Col xs={4} collapseRight>
+                {/*
                 <img src='/imgs/avatars/avatar0.png' width='40' height='40' />
+                */}
               </Col>
               <Col xs={8} collapseLeft id='avatar-col'>
-                <div style={{top: 23, fontSize: 16, lineHeight: 1, position: 'relative'}}>Anna Sanchez</div>
+                <div style={{top: 23, fontSize: 16, lineHeight: 1, position: 'relative'}}>User Name</div>
                 <div>
                   <Progress id='demo-progress' value={30} min={0} max={100} color='#ffffff'/>
                   <a href='#'><Icon id='demo-icon' bundle='fontello' glyph='lock-5' /></a>
@@ -61,6 +79,7 @@ var SidebarSection = React.createClass({
             </Row>
           </Grid>
         </div>
+        {/*
         <SidebarControls>
           <SidebarControlBtn bundle='fontello' glyph='docs' sidebar={0} />
           <SidebarControlBtn bundle='fontello' glyph='chat-1' sidebar={1} />
@@ -68,7 +87,8 @@ var SidebarSection = React.createClass({
           <SidebarControlBtn bundle='fontello' glyph='th-list-2' sidebar={3} />
           <SidebarControlBtn bundle='fontello' glyph='bell-5' sidebar={4} />
         </SidebarControls>
-        <div id='sidebar-container'>
+        */}
+        <div id='sidebar-container' style={{top: "100px"}}>
           <Sidebar sidebar={0} active>
             <ApplicationSidebar />
           </Sidebar>

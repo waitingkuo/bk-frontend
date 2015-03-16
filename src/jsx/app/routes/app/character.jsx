@@ -2,48 +2,13 @@ var Header = require('../../common/header.jsx');
 var Sidebar = require('../../common/sidebar.jsx');
 var Footer = require('../../common/footer.jsx');
 
-/*
-var Body = React.createClass({
-  render: function() {
-    return (
-      <Container id='body'>
-        <Grid>
-          <Row>
-            <Col sm={12}>
-              <PanelContainer>
-                <Panel>
-                  <PanelBody className='text-center'>
-                    <p>BLANK PAGE LA</p>
-                  </PanelBody>
-                </Panel>
-              </PanelContainer>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={12}>
-              <ButtonGroup>
-                <Button bsStyle='blue'>Left</Button>
-                <Button bsStyle='blue'>Middle</Button>
-                <Button bsStyle='blue'>Right</Button>
-              </ButtonGroup>
-            </Col>
-          </Row>
-          <Row>
-          </Row>
-        </Grid>
-      </Container>
-    );
-  }
-});
-*/
-
 var ChartContainer = React.createClass({
   render: function() {
     return (
       <PanelContainer noOverflow>
         <Panel>
           <PanelBody style={{padding:25}} className="text-center">
-            <h4>{this.props.name} wowowowowo</h4>
+            <h4>{this.props.name}</h4>
             <div>
               <canvas id={this.props.id} width={this.props.width} height={this.props.height} />
             </div>
@@ -75,7 +40,7 @@ var Body = React.createClass({
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151, 187, 205, 1)",
-            data: [200, 50, 30, 30, 48]
+            data: [70, 50, 30, 30, 48]
           }
         ]
       };
@@ -116,3 +81,4 @@ var Page = React.createClass({
 });
 
 module.exports = Page;
+

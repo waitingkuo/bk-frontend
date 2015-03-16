@@ -153,14 +153,14 @@
 	  PricingButtonContainer: __webpack_require__(43).PricingButtonContainer,
 	  Alert: __webpack_require__(44).Alert,
 	  AlertLink: __webpack_require__(44).AlertLink,
-	  Tag: __webpack_require__(45),
-	  Sidebar: __webpack_require__(46).Sidebar,
-	  SidebarNav: __webpack_require__(46).SidebarNav,
-	  SidebarBtn: __webpack_require__(46).SidebarBtn,
-	  SidebarMixin: __webpack_require__(46).SidebarMixin,
-	  SidebarNavItem: __webpack_require__(46).SidebarNavItem,
-	  SidebarControls: __webpack_require__(46).SidebarControls,
-	  SidebarControlBtn: __webpack_require__(46).SidebarControlBtn,
+	  Tag: __webpack_require__(46),
+	  Sidebar: __webpack_require__(45).Sidebar,
+	  SidebarNav: __webpack_require__(45).SidebarNav,
+	  SidebarBtn: __webpack_require__(45).SidebarBtn,
+	  SidebarMixin: __webpack_require__(45).SidebarMixin,
+	  SidebarNavItem: __webpack_require__(45).SidebarNavItem,
+	  SidebarControls: __webpack_require__(45).SidebarControls,
+	  SidebarControlBtn: __webpack_require__(45).SidebarControlBtn,
 	};
 
 
@@ -4335,27 +4335,6 @@
 /* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Tag = React.createClass({displayName: "Tag",
-	  getDefaultProps: function() {
-	    return {
-	      href: '#',
-	      color: 'darkgreen45'
-	    };
-	  },
-	  render: function() {
-	    return (
-	      React.createElement("a", {href: this.props.href, className: 'left-tag border-hover-'+this.props.color+' bg-hover-'+this.props.color+' fg-hover-white bg-lightgray50 border-lightgray50 fg-text'}, this.props.children)
-	    );
-	  }
-	});
-
-	module.exports = Tag;
-
-
-/***/ },
-/* 46 */
-/***/ function(module, exports, __webpack_require__) {
-
 	var classSet = React.addons.classSet;
 
 	var openState = (!Modernizr.touch) ? (localStorage.getItem('sidebar-open-state') === 'true' ? true : false) : false;
@@ -4793,6 +4772,27 @@
 	  SidebarControls: SidebarControls,
 	  SidebarControlBtn: SidebarControlBtn
 	};
+
+
+/***/ },
+/* 46 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Tag = React.createClass({displayName: "Tag",
+	  getDefaultProps: function() {
+	    return {
+	      href: '#',
+	      color: 'darkgreen45'
+	    };
+	  },
+	  render: function() {
+	    return (
+	      React.createElement("a", {href: this.props.href, className: 'left-tag border-hover-'+this.props.color+' bg-hover-'+this.props.color+' fg-hover-white bg-lightgray50 border-lightgray50 fg-text'}, this.props.children)
+	    );
+	  }
+	});
+
+	module.exports = Tag;
 
 
 /***/ }
